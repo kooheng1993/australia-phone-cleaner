@@ -9,10 +9,12 @@ export default function Home() {
     const formattedLines = lines.map((line) => {
       line = line.trim();
       if (line.startsWith("+6104")) {
-        return "+614" + line.slice(5);
+        return "614" + line.slice(5);
+      } else if (line.startsWith("6104")) {
+        return "614" + line.slice(4);
       } else if (line.startsWith("04")) {
-        return "+614" + line.slice(2);
-      } else if (line.startsWith("+614")) {
+        return "614" + line.slice(2);
+      } else if (line.startsWith("614")) {
         return line;
       }
       return "INVALID: " + line;
